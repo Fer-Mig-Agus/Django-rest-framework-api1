@@ -12,5 +12,13 @@ class Appointment(models.Model):
     )
     appointments_date = models.DateField()
     appointments_time = models.TimeField()
-    appointments_time = models.TimeField()
+    notes = models.TextField()
+    status = models.CharField(max_length=10)
 
+
+class MedicalNote(models.Model):
+    appointment = models.ForeignKey(
+        Appointment, related_name='medical_notes', on_delete=models.CASCADE
+    )
+    note = models.TextField()
+    date = models.DateField()

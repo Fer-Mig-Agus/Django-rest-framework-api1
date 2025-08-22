@@ -21,12 +21,12 @@ class Insurance(models.Model):
     )
     provider = models.CharField(max_length=100)
     policy_number = models.CharField(max_length=100)
-    expiration_date = models.DateField
+    expiration_date = models.DateField()
 
 
-class MedicalNote(models.Model):
+class MedicalRecord(models.Model):
     doctor = models.ForeignKey(
-        Doctor, related_name='medical_notes', on_delete=models.CASCADE
+        Doctor, related_name='patient_medical_notes', on_delete=models.CASCADE
     )
     note = models.TextField()
     date = models.DateField()

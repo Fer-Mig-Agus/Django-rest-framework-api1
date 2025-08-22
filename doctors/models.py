@@ -27,7 +27,7 @@ class DoctorAvailable(models.Model):
 
 class MedicalNote(models.Model):
     doctor = models.ForeignKey(
-        Doctor, related_name='medical_notes', on_delete=models.CASCADE
+        Doctor, related_name='doctor_medical_notes', on_delete=models.CASCADE
     )
     note = models.TextField()
     date = models.DateField()
