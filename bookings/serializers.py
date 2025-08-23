@@ -19,4 +19,4 @@ class MedicarNoteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MedicalNote
-        fields = ['note', 'date', 'appintment']
+        fields = ['note', 'date', 'appointment']
